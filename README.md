@@ -1,15 +1,15 @@
-Donuts - Delightful Management
-==============================
+Baker - CMS for Programmers
+===========================
 
-* [中文版说明文件](https://github.com/allengaller/donuts/blob/master/%E5%85%B3%E4%BA%8E.md)   
+* [中文版说明文件](https://github.com/allengaller/baker/blob/master/%E5%85%B3%E4%BA%8E.md)   
 
 About
 -----
-Donuts is a full-stack, hacker/coder-friendly, interesting  system.   
+Baker is a full-stack, hacker/coder-friendly CMS.   
 This project covers the Linux server side, Mac/iOS/Android Client side, and of crouse the Web version.   
-The current on-going development is mainly focus on the Linux server side and the web version of Brownie.   
+The current on-going development is mainly focus on the Linux server side and the web version of Baker.   
 
-Why Donuts?
+Why Baker?
 ------------
 Have you wonder, why wordpress is so slow but many of we coders need to stock with it like the IT newbies？   
 We don't like Wordpress, we knew it is the brainless and quick way to setup your CMS.
@@ -29,7 +29,7 @@ OK, Features?
 -------------
 
 * Self-hosting solution available.
-* Backup or restore your data precisely with the *BBK* tool.
+* Backup or restore your data precisely with the *Baker BAK* tool.
 * Cross platform client Apps including iOS, Mac, Android, Windows, Linux(Debian).   
 * Full-stack CMS system. (Support features are listed as below).    
 * Nice and clear UI using the morden flat design.   
