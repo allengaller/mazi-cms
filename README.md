@@ -5,9 +5,7 @@ Baker - CMS for Programmers
 
 About
 -----
-Baker is a full-stack, hacker/coder-friendly CMS.   
-This project covers the Linux server side, Mac/iOS/Android Client side, and of crouse the Web version.   
-The current on-going development is mainly focus on the Linux server side and the web version of Baker.   
+Baker is a full-stack, programmer friendly CMS.   
 
 Why Baker?
 ------------
@@ -18,7 +16,7 @@ We decided to make a difference by bake our own CMS using CakePHP.
 
 Why CakePHP?
 ------------
-CakePHP is a well-designed full-stack framework.
+CakePHP is a well-designed framework.
 
 Why PHP?
 --------
