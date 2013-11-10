@@ -1,4 +1,3 @@
-brownie
-=======
+# Baker for Mac #
 
-Brownie - A delightful CMS for programmers.
+Comming Soon.

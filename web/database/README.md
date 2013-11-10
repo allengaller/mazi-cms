@@ -1,4 +1,4 @@
-brownie
-=======
+# Baker SQL Scripts #
 
-Brownie - A delightful CMS for programmers.
+Database Structure
+------------------
