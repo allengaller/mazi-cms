@@ -1,4 +1,4 @@
-Baker - CMS for Programmers
+Mazi - CMS for Programmers
 ===========================
 
 * [中文版说明文件](https://github.com/allengaller/baker/blob/master/%E5%85%B3%E4%BA%8E.md)   
@@ -7,7 +7,7 @@ About
 -----
 Baker is a full-stack, programmer friendly CMS.   
 
-Why Baker?
+Why Mazi?
 ------------
 Have you wonder, why wordpress is so slow but many of we coders need to stock with it like the IT newbies？   
 We don't like Wordpress, we knew it is the brainless and quick way to setup your CMS.
