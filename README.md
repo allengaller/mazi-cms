@@ -54,6 +54,7 @@ UI Design
 About us
 --------
 [Apps4Coder Studio] (http://apps4coder.com)
+Founder: Allen Galler
 
 Contribute
 ----------
