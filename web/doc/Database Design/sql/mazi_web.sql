@@ -134,9 +134,6 @@ CREATE TABLE `posts_tags` (
 	PRIMARY KEY (`id`),
 ) ENGINE=MyISM DEFAULT CHARSET=utf8_general_ci COMMNET='posts_tags';
 
-DROP TABLE IF EXISTS `posts_cates`;
-
-
 DROP TABLE IF EXISTS `pages`;
 CREATE TABLE `pages` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
