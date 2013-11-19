@@ -56,8 +56,16 @@ CREATE TABLE `posts` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`uid` int(11) NOT NULL,
 	`pid` int(11) DEFAULT NULL,
-	`content` varchar(256) NOT NULL,
-	`abstract` varchar(128) DEFAULT NULL,
+	`content` text NOT NULL,
+	`subtitle` varchar(128) DEFAULT NULL COMMENT 'Abstract',
+	`title` varchar(250) NOT NULL COMMENT 'Title',
+	`hits` int(11) NOT NULL DEFAULT 0 COMMENT 'Amount of clicks',
+	`likes` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Amount of likes',
+	`pcates` int(11) NOT NULL COMMENT 'Categories',
+	`is_show` int(11) NOT NULL DEFAULT 0 COMMENT 'Show in front pages',
+	`is_top` int(11) NOT NULL DEFAULT 0 COMMENT 'Show on top in front pages',
+	`img_src` varchar(200) COMMENT 'List of picture address',
+	`creator_id` int(11) NOT NULL,
 	`post_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	PRIMARY KEY (`id`),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci COMMENT='Posts from users.'
@@ -65,6 +73,20 @@ CREATE TABLE `posts` (
 DROP TABLE IF EXISTS `books`;
 CREATE TABLE `books` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`title` varchar(250) NOT NULL COMMENT 'Book Title',
+	`subtitle` varchar(250) NOT NULL COMMENT 'Book Subtitle',
+	`attention` int(11) NOT NULL DEFAULT 0 COMMENT 'Amount of attention',
+	`hits` int(11) NOT NULL DEFAULT 0 COMMENT 'Amount of clicks',
+	`likes` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Amount of likes',
+	`description` varchar(300) NOT NULL COMMENT 'Description',
+	`detail`  text COMMENT 'Book Detail' ,
+	`price` decimal(10,2) NULL DEFAULT NULL COMMENT 'Default price',
+	`discount` decimal(10,2) NULL DEFAULT NULL COMMENT 'Discount price',
+	`is_discount` int(11) NOT NULL DEFAULT 0 COMMENT '1:Discount price 2:Default price',
+	`seller_id` int(11) NOT NULL COMMENT 'Seller ID',
+	`sales`  int(11) NULL DEFAULT 0 COMMENT 'Sales count',
+	`createtime`  timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+	`last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	PRIMARY KEY (`id`),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8_general_ci COMMENT='Books from users.'
 
@@ -167,6 +189,11 @@ CREATE TABLE `media` (
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE `comments` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`content` varchar(45) NOT NULL COMMNET 'Content of comments',
+	`iid` int(11) NOT NULL COMMNET 'Item ID',
+	`itype` int(11) NOT NULL COMMNET 'Item type',
+	`creator_id` int(11) NOT NULL COMMNET 'Comments creator ID',
+	`is_show` int(11) NOT NULL COMMNET 'Show in front pages',
 	PRIMARY KEY (`id`),
 ) ENGINE=MyISM DEFAULT CHARSET=utf8_general_ci COMMNET='comments';
 
