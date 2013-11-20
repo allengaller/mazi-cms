@@ -199,6 +199,18 @@ CREATE TABLE `journals` (
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Journals from users.';
 
+DROP TABLE IF EXISTS `pages`;
+CREATE TABLE `pages` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`pname` varchar(20) COMMENT 'Page name',
+	`pcates` int(20) COMMENT 'Page categories',
+	`ptitle` varchar(40) COMMENT 'Page title',
+	`psubtitle` varchar(40) COMMENT 'Subtitle of page',
+	`metadescription` text,
+  	`metakeywords` text,
+	PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='pages';
+
 DROP TABLE IF EXISTS `carts`;
 CREATE TABLE `carts` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
@@ -243,30 +255,6 @@ CREATE TABLE `cates` (
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Categories';
 
-DROP TABLE IF EXISTS `posts_tags`;
-CREATE TABLE `posts_tags` (
-	`id` int(11) NOT NULL AUTO_INCREMENT,
-	PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='posts_tags';
-
-DROP TABLE IF EXISTS `pages`;
-CREATE TABLE `pages` (
-	`id` int(11) NOT NULL AUTO_INCREMENT,
-	`pname` varchar(20) COMMENT 'Page name',
-	`pcates` int(20) COMMENT 'Page categories',
-	`ptitle` varchar(40) COMMENT 'Page title',
-	`psubtitle` varchar(40) COMMENT 'Subtitle of page',
-	`metadescription` text,
-  	`metakeywords` text,
-	PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='pages';
-
-DROP TABLE IF EXISTS `pages_tags`;
-CREATE TABLE `pages_tags` (
-	`id` int(11) NOT NULL AUTO_INCREMENT,
-	PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='pages_tags';
-
 DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
@@ -282,6 +270,10 @@ CREATE TABLE `permissions` (
 DROP TABLE IF EXISTS `media`;
 CREATE TABLE `media` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`mname` varchar(20) COMMENT 'Media name',
+	`mlocation` varchar(40) COMMENT 'Media file location',
+	`mdescription` varchar(200) COMMENT 'Media description',
+	`mnotes` varchar(200) DEFAULT NULL COMMENT 'Media notes',
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='media';
 
@@ -303,23 +295,39 @@ CREATE TABLE `comments` (
 DROP TABLE IF EXISTS `themes`;
 CREATE TABLE `themes` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`thname` varchar(20) COMMENT 'Theme name',
+	`thlocation` varchar(40) COMMENT 'Theme file location',
+	`thdescription` varchar(200) COMMENT 'Theme description',
+	`thnotes` varchar(200) DEFAULT NULL COMMENT 'Theme notes',
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='themes';
 
 DROP TABLE IF EXISTS `tools`;
 CREATE TABLE `tools` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`tname` varchar(20) COMMENT 'Tool name',
+	`tlocation` varchar(40) COMMENT 'Tool file location',
+	`tdescription` varchar(200) COMMENT 'Tool description',
+	`tnotes` varchar(200) DEFAULT NULL COMMENT 'Tool notes',
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='tools';
 
 DROP TABLE IF EXISTS `plugins`;
 CREATE TABLE `plugins` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`pname` varchar(20) COMMENT 'Plugin name',
+	`plocation` varchar(40) COMMENT 'Plugin file location',
+	`pdescription` varchar(200) COMMENT 'Plugin description',
+	`pnotes` varchar(200) DEFAULT NULL COMMENT 'Plugin notes',
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='plugins';
 
 DROP TABLE IF EXISTS `settings`;
 CREATE TABLE `settings` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`sname` varchar(40) NOT NULL COMMENT 'Setting name',
+	`svalue` varchar(40) NOT NULL COMMENT 'Setting value',
+	`sdescription` varchar(200) COMMENT 'Setting description',
+	`snotes` varchar(200) DEFAULT NULL COMMENT 'Setting notes',
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='settings';
