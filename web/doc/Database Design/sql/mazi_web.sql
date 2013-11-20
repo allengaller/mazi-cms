@@ -59,6 +59,8 @@ CREATE TABLE `posts` (
 	`content` text NOT NULL,
 	`subtitle` varchar(128) DEFAULT NULL COMMENT 'Abstract',
 	`title` varchar(250) NOT NULL COMMENT 'Title',
+	`metadescription` text,
+  	`metakeywords` text,
 	`hits` int(11) NOT NULL DEFAULT 0 COMMENT 'Amount of clicks',
 	`likes` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Amount of likes',
 	`pcates` int(11) NOT NULL COMMENT 'Categories',
@@ -188,11 +190,15 @@ CREATE TABLE `media` (
 
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE `comments` (
-	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`id` int(20) NOT NULL AUTO_INCREMENT,
+	`parent_id` int(20) DEFAULT NULL,
 	`content` varchar(45) NOT NULL COMMNET 'Content of comments',
-	`iid` int(11) NOT NULL COMMNET 'Item ID',
+	`iid` int(20) NOT NULL COMMNET 'Item ID',
 	`itype` int(11) NOT NULL COMMNET 'Item type',
-	`creator_id` int(11) NOT NULL COMMNET 'Comments creator ID',
+	`creator_id` int(11) COMMNET 'Comments creator ID',
+	`email` varchar(100),
+	`rating` int(11) DEFAULT NULL,
+	`website` varchar(100) COMMNET 'Website of Commentee',
 	`is_show` int(11) NOT NULL COMMNET 'Show in front pages',
 	PRIMARY KEY (`id`),
 ) ENGINE=MyISM DEFAULT CHARSET=utf8_general_ci COMMNET='comments';
