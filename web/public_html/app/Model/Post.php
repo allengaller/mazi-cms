@@ -132,13 +132,13 @@ class Post extends AppModel {
  *
  * @var array
  */
-	public $belongsTo = array(
-		'Seller' => array(
-			'className' => 'Seller',
-			'foreignKey' => 'seller_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
+// 	public $belongsTo = array(
+// 		'Seller' => array(
+// 			'className' => 'Seller',
+// 			'foreignKey' => 'seller_id',
+// 			'conditions' => '',
+// 			'fields' => '',
+// 			'order' => ''
+// 		)
+// 	);
 }
