@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../../../assets/ico/favicon.png">
+    <link rel="shortcut icon" href="/app/webroot/assets/ico/favicon.png">
 
     <title>码字 - 码农专用CMS</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../../css/bootstrap.css" rel="stylesheet">
+    <link href="/app/webroot/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../../assets/css/justified-nav.css" rel="stylesheet">
+    <link href="/app/webroot/assets/css/justified-nav.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
