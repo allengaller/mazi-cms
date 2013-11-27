@@ -15,15 +15,19 @@ __Check Point__: Dec. 15.
 __Check List__:
 
 * Back-end Post CRUD.
-* Back-end Basic UI. 
+
 
 ### Milestone 1.2 ###
-__Check Point__: Dec. 15.   
+__Check Point__: Dec. 20.   
 __Check List__:
 
+* Back-end Basic UI. 
+
 ### Milestone 1.3 ###
-__Check Point__: Dec. 15.   
+__Check Point__: Dec. 25.   
 __Check List__:
+
+* Testing
 
 Stage 2
 -------
@@ -37,15 +41,15 @@ __Goal__
 	
 	
 ### Milestone 2.1 ###
-__Check Point__: Dec. 15.   
+__Check Point__: Jan. 5.   
 __Check List__:
 
 ### Milestone 2.2 ###
-__Check Point__: Dec. 15.   
+__Check Point__: Jan. 10.   
 __Check List__:
 
 ### Milestone 2.3 ###
-__Check Point__: Dec. 15.   
+__Check Point__: Jan. 15.   
 __Check List__:
 
 
