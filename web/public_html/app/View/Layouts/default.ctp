@@ -38,6 +38,7 @@
           <li><a href="#">服务</a></li>
           <li><a href="#">下载</a></li>
           <li><a href="#">关于</a></li>
+          <li><a href="#">内容革命</a></li>
           <li><a href="#">联系我们</a></li>
         </ul>
       </div>
