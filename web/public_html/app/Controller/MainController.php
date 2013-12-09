@@ -10,7 +10,12 @@ App::uses('AppController', 'Controller');
 class MainController extends AppController {
 
 	public function index() {
+        //debug('123');exit;
 		$this->layout = 'default';
 	}
+
+    public function login() {
+        debug('123');exit;
+    }
 	
 }

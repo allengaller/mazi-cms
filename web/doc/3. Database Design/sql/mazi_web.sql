@@ -1,17 +1,14 @@
 USE `mazi`;
 
-DROP TABLE IF EXISTS `accounts_admin`;
-CREATE TABLE `accounts_admin` (
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`group_id` int(11) DEFAULT NULL COMMENT 'Group ID',
 	`account` varchar(45) DEFAULT NULL COMMENT 'Account Name',
 	`password` varchar(64) DEFAULT NULL COMMENT 'Password',
 	`role` tinytext COMMENT 'Each role have one permission sets.',
 	`name` varchar(45) DEFAULT '' COMMENT 'Name',
-	`gender` tinyint(4) DEFAULT '1' COMMENT '1:Male,2:Female',
-	`mobile` bigint(11) DEFAULT NULL COMMENT 'Mobile Phone',
 	`email` varchar(64) DEFAULT '',
-	`remark` varchar(125) DEFAULT '',
 	`status` tinyint(4) DEFAULT NULL COMMENT '1:Normal,2:Disable,3:Delete.',
 	`created` datetime DEFAULT NULL,
 	`modified` datetime DEFAULT NULL,
@@ -19,24 +16,17 @@ CREATE TABLE `accounts_admin` (
 	UNIQUE KEY `email` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Admin Account';
 
-DROP TABLE IF EXISTS `accounts_user`;
-CREATE TABLE `accounts_user` (
+DROP TABLE IF EXISTS `user_detail`;
+CREATE TABLE `user_detail` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
-	`group_id` int(11) DEFAULT NULL COMMENT 'Group ID',
-	`account` varchar(45) DEFAULT NULL COMMENT 'Account Name',
-	`password` varchar(64) DEFAULT NULL COMMENT 'Password',
-	`role` tinytext COMMENT 'Each role have one permission sets.',
-	`name` varchar(45) DEFAULT '' COMMENT 'Name',
 	`first_name` varchar(64) NOT NULL,
   	`last_name` varchar(64) NOT NULL,
 	`gender` tinyint(4) DEFAULT '1' COMMENT '1:Male,2:Female',
 	`mobile` bigint(11) DEFAULT NULL COMMENT 'Mobile Phone',
-	`email` varchar(64) DEFAULT '',
 	`remark` varchar(125) DEFAULT '',
 	`follower_id` int(11) NOT NULL,
 	`followee_id` int(11) NOT NULL,
 	`follow_time` int(11) NOT NULL,
-	`status` int(11) NOT NULL COMMENT '1:Normal,2:Disable,3:Delete.',
 	`country` int(32) NOT NULL,
 	`province` int(32) NOT NULL,
 	`city` int(32) NOT NULL,
@@ -46,8 +36,7 @@ CREATE TABLE `accounts_user` (
 	`modified` datetime DEFAULT NULL,
 	KEY `follower_id` (`follower_id`, `followee_id`),
 	KEY `followee_id` (`followee_id`),
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `email` (`email`)
+	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='User Account';
 
 DROP TABLE IF EXISTS `posts`;

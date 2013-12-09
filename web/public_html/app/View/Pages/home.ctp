@@ -1,83 +1,226 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+<?php
+/**
+ *
+ * PHP 5
+ *
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.View.Pages
+ * @since         CakePHP(tm) v 0.10.0.1076
+ */
 
-    <title>Justified Nav Template for Bootstrap</title>
+if (!Configure::read('debug')):
+	throw new NotFoundException();
+endif;
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.css" rel="stylesheet">
+App::uses('Debugger', 'Utility');
+?>
+<h2><?php echo __d('cake_dev', 'Release Notes for CakePHP %s.', Configure::version()); ?></h2>
+<p>
+	<a href="http://cakephp.org/changelogs/<?php echo Configure::version(); ?>"><?php echo __d('cake_dev', 'Read the changelog'); ?> </a>
+</p>
+<?php
+if (Configure::read('debug') > 0):
+	Debugger::checkSecurityKeys();
+endif;
+?>
+<?php
+if (file_exists(WWW_ROOT . 'css' . DS . 'cake.generic.css')):
+?>
+<p id="url-rewriting-warning" style="background-color:#e32; color:#fff;">
+	<?php echo __d('cake_dev', 'URL rewriting is not properly configured on your server.'); ?>
+	1) <a target="_blank" href="http://book.cakephp.org/2.0/en/installation/url-rewriting.html" style="color:#fff;">Help me configure it</a>
+	2) <a target="_blank" href="http://book.cakephp.org/2.0/en/development/configuration.html#cakephp-core-configuration" style="color:#fff;">I don't / can't use URL rewriting</a>
+</p>
+<?php
+endif;
+?>
+<p>
+<?php
+	if (version_compare(PHP_VERSION, '5.2.8', '>=')):
+		echo '<span class="notice success">';
+			echo __d('cake_dev', 'Your version of PHP is 5.2.8 or higher.');
+		echo '</span>';
+	else:
+		echo '<span class="notice">';
+			echo __d('cake_dev', 'Your version of PHP is too low. You need PHP 5.2.8 or higher to use CakePHP.');
+		echo '</span>';
+	endif;
+?>
+</p>
+<p>
+	<?php
+		if (is_writable(TMP)):
+			echo '<span class="notice success">';
+				echo __d('cake_dev', 'Your tmp directory is writable.');
+			echo '</span>';
+		else:
+			echo '<span class="notice">';
+				echo __d('cake_dev', 'Your tmp directory is NOT writable.');
+			echo '</span>';
+		endif;
+	?>
+</p>
+<p>
+	<?php
+		$settings = Cache::settings();
+		if (!empty($settings)):
+			echo '<span class="notice success">';
+				echo __d('cake_dev', 'The %s is being used for core caching. To change the config edit %s', '<em>'. $settings['engine'] . 'Engine</em>', 'APP/Config/core.php');
+			echo '</span>';
+		else:
+			echo '<span class="notice">';
+				echo __d('cake_dev', 'Your cache is NOT working. Please check the settings in %s', 'APP/Config/core.php');
+			echo '</span>';
+		endif;
+	?>
+</p>
+<p>
+	<?php
+		$filePresent = null;
+		if (file_exists(APP . 'Config' . DS . 'database.php')):
+			echo '<span class="notice success">';
+				echo __d('cake_dev', 'Your database configuration file is present.');
+				$filePresent = true;
+			echo '</span>';
+		else:
+			echo '<span class="notice">';
+				echo __d('cake_dev', 'Your database configuration file is NOT present.');
+				echo '<br/>';
+				echo __d('cake_dev', 'Rename %s to %s', 'APP/Config/database.php.default', 'APP/Config/database.php');
+			echo '</span>';
+		endif;
+	?>
+</p>
+<?php
+if (isset($filePresent)):
+	App::uses('ConnectionManager', 'Model');
+	try {
+		$connected = ConnectionManager::getDataSource('default');
+	} catch (Exception $connectionError) {
+		$connected = false;
+		$errorMsg = $connectionError->getMessage();
+		if (method_exists($connectionError, 'getAttributes')):
+			$attributes = $connectionError->getAttributes();
+			if (isset($errorMsg['message'])):
+				$errorMsg .= '<br />' . $attributes['message'];
+			endif;
+		endif;
+	}
+?>
+<p>
+	<?php
+		if ($connected && $connected->isConnected()):
+			echo '<span class="notice success">';
+				echo __d('cake_dev', 'CakePHP is able to connect to the database.');
+			echo '</span>';
+		else:
+			echo '<span class="notice">';
+				echo __d('cake_dev', 'CakePHP is NOT able to connect to the database.');
+				echo '<br /><br />';
+				echo $errorMsg;
+			echo '</span>';
+		endif;
+	?>
+</p>
+<?php endif; ?>
+<?php
+	App::uses('Validation', 'Utility');
+	if (!Validation::alphaNumeric('cakephp')):
+		echo '<p><span class="notice">';
+			echo __d('cake_dev', 'PCRE has not been compiled with Unicode support.');
+			echo '<br/>';
+			echo __d('cake_dev', 'Recompile PCRE with Unicode support by adding <code>--enable-unicode-properties</code> when configuring');
+		echo '</span></p>';
+	endif;
+?>
 
-    <!-- Custom styles for this template -->
-    <link href="justified-nav.css" rel="stylesheet">
+<p>
+	<?php
+		if (CakePlugin::loaded('DebugKit')):
+			echo '<span class="notice success">';
+				echo __d('cake_dev', 'DebugKit plugin is present');
+			echo '</span>';
+		else:
+			echo '<span class="notice">';
+				echo __d('cake_dev', 'DebugKit is not installed. It will help you inspect and debug different aspects of your application.');
+				echo '<br/>';
+				echo __d('cake_dev', 'You can install it from %s', $this->Html->link('github', 'https://github.com/cakephp/debug_kit'));
+			echo '</span>';
+		endif;
+	?>
+</p>
 
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<h3><?php echo __d('cake_dev', 'Editing this Page'); ?></h3>
+<p>
+<?php
+echo __d('cake_dev', 'To change the content of this page, edit: %s.<br />
+To change its layout, edit: %s.<br />
+You can also add some CSS styles for your pages at: %s.',
+	'APP/View/Pages/home.ctp', 'APP/View/Layouts/default.ctp', 'APP/webroot/css');
+?>
+</p>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-  </head>
+<h3><?php echo __d('cake_dev', 'Getting Started'); ?></h3>
+<p>
+	<?php
+		echo $this->Html->link(
+			sprintf('<strong>%s</strong> %s', __d('cake_dev', 'New'), __d('cake_dev', 'CakePHP 2.0 Docs')),
+			'http://book.cakephp.org/2.0/en/',
+			array('target' => '_blank', 'escape' => false)
+		);
+	?>
+</p>
+<p>
+	<?php
+		echo $this->Html->link(
+			__d('cake_dev', 'The 15 min Blog Tutorial'),
+			'http://book.cakephp.org/2.0/en/tutorials-and-examples/blog/blog.html',
+			array('target' => '_blank', 'escape' => false)
+		);
+	?>
+</p>
 
-  <body>
+<h3><?php echo __d('cake_dev', 'Official Plugins'); ?></h3>
+<p>
+<ul>
+	<li>
+		<?php echo $this->Html->link('DebugKit', 'https://github.com/cakephp/debug_kit') ?>:
+		<?php echo __d('cake_dev', 'provides a debugging toolbar and enhanced debugging tools for CakePHP applications.'); ?>
+	</li>
+	<li>
+		<?php echo $this->Html->link('Localized', 'https://github.com/cakephp/localized') ?>:
+		<?php echo __d('cake_dev', 'contains various localized validation classes and translations for specific countries'); ?>
+	</li>
+</ul>
+</p>
 
-    <div class="container">
+<h3><?php echo __d('cake_dev', 'More about Cake'); ?></h3>
+<p>
+<?php echo __d('cake_dev', 'CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC.'); ?>
+</p>
+<p>
+<?php echo __d('cake_dev', 'Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.'); ?>
+</p>
 
-      <div class="masthead">
-        <h3 class="text-muted">Project name</h3>
-        <ul class="nav nav-justified">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Downloads</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Jumbotron -->
-      <div class="jumbotron">
-        <h1>Marketing stuff!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
-      </div>
-
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-
-      <!-- Site footer -->
-      <div class="footer">
-        <p>&copy; Company 2013</p>
-      </div>
-
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-  </body>
-</html>
+<ul>
+	<li><a href="http://cakefoundation.org/"><?php echo __d('cake_dev', 'Cake Software Foundation'); ?> </a>
+	<ul><li><?php echo __d('cake_dev', 'Promoting development related to CakePHP'); ?></li></ul></li>
+	<li><a href="http://www.cakephp.org">CakePHP</a>
+	<ul><li><?php echo __d('cake_dev', 'The Rapid Development Framework'); ?></li></ul></li>
+	<li><a href="http://book.cakephp.org"><?php echo __d('cake_dev', 'CakePHP Documentation'); ?> </a>
+	<ul><li><?php echo __d('cake_dev', 'Your Rapid Development Cookbook'); ?></li></ul></li>
+	<li><a href="http://api.cakephp.org"><?php echo __d('cake_dev', 'CakePHP API'); ?> </a>
+	<ul><li><?php echo __d('cake_dev', 'Quick Reference'); ?></li></ul></li>
+	<li><a href="http://bakery.cakephp.org"><?php echo __d('cake_dev', 'The Bakery'); ?> </a>
+	<ul><li><?php echo __d('cake_dev', 'Everything CakePHP'); ?></li></ul></li>
+	<li><a href="http://plugins.cakephp.org"><?php echo __d('cake_dev', 'CakePHP plugins repo'); ?> </a>
+	<ul><li><?php echo __d('cake_dev', 'A comprehensive list of all CakePHP plugins created by the community'); ?></li></ul></li>
+	<li><a href="https://groups.google.com/group/cake-php"><?php echo __d('cake_dev', 'CakePHP Google Group'); ?> </a>
+	<ul><li><?php echo __d('cake_dev', 'Community mailing list'); ?></li></ul></li>
+	<li><a href="irc://irc.freenode.net/cakephp">irc.freenode.net #cakephp</a>
+	<ul><li><?php echo __d('cake_dev', 'Live chat about CakePHP'); ?></li></ul></li>
+	<li><a href="https://github.com/cakephp/"><?php echo __d('cake_dev', 'CakePHP Code'); ?> </a>
+	<ul><li><?php echo __d('cake_dev', 'For the Development of CakePHP Git repository, Downloads'); ?></li></ul></li>
+	<li><a href="https://cakephp.lighthouseapp.com/"><?php echo __d('cake_dev', 'CakePHP Lighthouse'); ?> </a>
+	<ul><li><?php echo __d('cake_dev', 'CakePHP Tickets, Wiki pages, Roadmap'); ?></li></ul></li>
+</ul>
