@@ -28,6 +28,8 @@
  */
 	Router::connect('/', array('controller' => 'main', 'action' => 'index'));
     Router::connect('/login', array('controller' => 'main', 'action' => 'login'));
+    Router::connect('/register', array('controller' => 'main', 'action' => 'register'));
+    Router::connect('/feature', array('controller' => 'main', 'action' => 'feature'));
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */

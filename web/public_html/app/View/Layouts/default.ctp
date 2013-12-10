@@ -35,9 +35,9 @@
         <h3 class="text-muted">码字</h3>
         <ul class="nav nav-justified">
           <li class="active"><a href="#">首页</a></li>
-          <li><a href="#">项目</a></li>
-          <li><a href="#">服务</a></li>
-          <li><a href="#">下载</a></li>
+          <li><a href="<?php echo $this->html->url(array('controller'=>'main', 'action'=>'feature')); ?>">特性</a></li>
+          <li><a href="<?php echo $this->html->url(array('controller'=>'main', 'action'=>'service')); ?>">服务</a></li>
+          <li><a href="<?php echo $this->html->url(array('controller'=>'main', 'action'=>'install')); ?>">下载</a></li>
           <li><a href="#">关于</a></li>
           <li><a href="#">内容革命</a></li>
           <li><a href="#">联系我们</a></li>
@@ -46,9 +46,9 @@
 
       <!-- Jumbotron -->
       <div class="jumbotron">
-        <h1>Marketing stuff!</h1>
+        <h1>码农专用CMS</h1>
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-        <p><a class="btn btn-lg btn-success" href="<?php echo $this->html->url(array('controller'=>'Main', 'action'=>'login'))?>" role="button">立即注册, 永久免费!</a></p>
+        <p><a class="btn btn-lg btn-success" href="<?php echo $this->html->url(array('controller'=>'Main', 'action'=>'register'))?>" role="button">立即注册, 永久免费!</a></p>
       </div>
 
       <!-- Example row of columns -->

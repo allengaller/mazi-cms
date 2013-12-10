@@ -15,7 +15,15 @@ class MainController extends AppController {
 	}
 
     public function login() {
-        debug('123');exit;
+        
+    }
+
+    public function register() {
+    	 
+    }
+
+    public function feature() {
+
     }
 	
 }
