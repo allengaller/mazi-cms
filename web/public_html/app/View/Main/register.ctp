@@ -18,11 +18,11 @@
 					<p>
 						<button class="btn" type="submit">注册</button>
 					</p>
-					
+
 					<fieldset>
 						<legend>第三方登录</legend>
-						
-						
+
+
 					</fieldset>
 				</fieldset>
 			</form>
