@@ -32,42 +32,60 @@
     <div class="container">
 
       <div class="masthead">
-        <h3 class="text-muted">码字</h3>
+        <h2 class="text-muted">码字
+        <p style="margin-left:90%;" class="text-muted">登录</p>
+        </h2>
         <ul class="nav nav-justified">
           <li class="active"><a href="#">首页</a></li>
           <li><a href="<?php echo $this->html->url(array('controller'=>'main', 'action'=>'feature')); ?>">特性</a></li>
           <li><a href="<?php echo $this->html->url(array('controller'=>'main', 'action'=>'service')); ?>">服务</a></li>
-          <li><a href="<?php echo $this->html->url(array('controller'=>'main', 'action'=>'install')); ?>">下载</a></li>
-          <li><a href="#">关于</a></li>
-          <li><a href="#">内容革命</a></li>
-          <li><a href="#">联系我们</a></li>
+          <li><a href="<?php echo $this->html->url(array('controller'=>'main', 'action'=>'install')); ?>">自部署</a></li>
+          <li><a href="#">重要理念</a></li>
+          <li><a href="#">CMS革命</a></li>
+          <li><a href="#">专业版</a></li>
         </ul>
       </div>
 
       <!-- Jumbotron -->
       <div class="jumbotron">
         <h1>码农专用CMS</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+        <p class="lead">只面向Geek, Programmer, Hacker, 不面向对象</p>
         <p><a class="btn btn-lg btn-success" href="<?php echo $this->html->url(array('controller'=>'Main', 'action'=>'register'))?>" role="button">立即注册, 永久免费!</a></p>
       </div>
 
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <h2>Markdown-贴心书写工具</h2>
+          <p>全面支持Markdown书写，可视化编辑。将所见即所得进行到底。</p>
           <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
        </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+       <div class="col-lg-4">
+          <h2>Sync-多平台同步</h2>
+          <p>一键同步博文到国内主流码农社区，包括CSDN，博客园等。一键发布代码至主流开源社区，如Github。</p>
           <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
         </div>
+        <div class="col-lg-4">
+          <h2>Dashboard-码农看板</h2>
+          <p>包含比特币看板，Github看板，技能看板等常用工具。个人技术优势和短板，一看便知！</p>
+          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <h2>GTD-内置番茄钟</h2>
+          <p>打卡上番茄种，记录你的专家之路！全球首个GTD理念和一万小时天才理论的联合加持的CMS系统。</p>
+          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <h2>Sale！-干货电商</h2>
+          <p>大家书写的干货，应该为大家创造更多的价值！</p>
+          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <h2>Branding-支持自媒体</h2>
+          <p>一键同步内容到微信公众账号，建立你的业界品牌！</p>
+          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+
       </div>
 
       <!-- Site footer -->

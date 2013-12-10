@@ -11,7 +11,7 @@ class MainController extends AppController {
 
 	public function index() {
         //debug('123');exit;
-		$this->layout = 'default';
+		//$this->layout = 'default';
 	}
 
     public function login() {
