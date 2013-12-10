@@ -34,7 +34,7 @@
 
       <div class="masthead">
         <h2 class="text-muted">码字
-        <p style="margin-left:90%;" class="text-muted">登录</p>
+
         </h2>
         <ul class="nav nav-justified">
           <li class="active"><a href="#">首页</a></li>
@@ -51,7 +51,11 @@
       <div class="jumbotron">
         <h1>码农专用CMS</h1>
         <p class="lead">只面向Geek, Programmer, Hacker, 不面向对象</p>
-        <p><a class="btn btn-lg btn-success" href="<?php echo $this->html->url(array('controller'=>'Main', 'action'=>'register'))?>" role="button">立即注册, 永久免费!</a></p>
+        <p>
+            <a class="btn btn-lg btn-success" href="<?php echo $this->html->url(array('controller'=>'Main', 'action'=>'register'))?>" role="button">立即注册, 永久免费!</a>
+            <p class="text-muted"><a href="<?php echo $this->html->url(array('controller'=>'Main', 'action'=>'login'))?>">登录</a></p>
+        </p>
+
       </div>
 
       <!-- Example row of columns -->
