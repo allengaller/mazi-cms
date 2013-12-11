@@ -151,7 +151,7 @@
  *	`manager_index()` and `/manager/controller/index`
  *
  */
-Configure::write('Routing.prefixes', array('zone'));
+	//Configure::write('Routing.prefixes', array('admin'));
 
 /**
  * Turn off all caching application-wide.
@@ -229,7 +229,7 @@ Configure::write('Routing.prefixes', array('zone'));
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-	Configure::write('Security.cipherSeed', '0987654321');
+	Configure::write('Security.cipherSeed', '1597534268');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
@@ -239,7 +239,7 @@ Configure::write('Routing.prefixes', array('zone'));
  * Set to `true` to apply timestamps when debug > 0. Set to 'force' to always enable
  * timestamping regardless of debug value.
  */
-	Configure::write('Asset.timestamp', true);
+	//Configure::write('Asset.timestamp', true);
 
 /**
  * Compress CSS output by removing comments, whitespace, repeating tags, etc.
