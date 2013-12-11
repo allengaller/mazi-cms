@@ -4,6 +4,8 @@
 
     <!-- Custom styles for this template -->
     <link href="/app/webroot/css/justified-nav.css" rel="stylesheet">
+
+    <script src="/app/webroot/js/jquery-2.0.3.min.js"></script>
 </head>
 
 <body>
@@ -19,16 +21,16 @@
                         <strong>Email</strong>
                     </p>
                     <p>
-                        <input type="text" />
+                        <input type="text" id="email"/>
                     </p>
                     <p>
                         <strong>密码</strong>
                     </p>
                     <p>
-                        <input type="password" />
+                        <input type="password" id="password"/>
                     </p>
                     <p>
-                        <button class="btn" type="submit">注册</button>
+                        <button class="btn" type="submit" id="submit">注册</button>
                     </p>
 
                     <fieldset>
@@ -44,3 +46,20 @@
     </div>
 </div>
 </body>
+
+<script>
+    $(function(){
+        $("#submit").click(function(){
+            $.ajax({
+                type: 'POST',
+                url: 'http://mazi.ag/Main/do_register',
+                data: $("#email").val()+$("#password").val(),
+                success: function(data){
+                    alert(data);
+                },
+                dataType: 'html'
+            });
+        }
+        );
+    });
+</script>

@@ -9,19 +9,9 @@ App::uses('AppController', 'Controller');
  */
 class PostsController extends AppController {
 
-/**
- * Helpers
- *
- * @var array
- */
-	//public $helpers = array('');
-
-/**
- * Components
- *
- * @var array
- */
+	public $helpers = array('');
 	public $components = array('Paginator');
+    public $uses = array('Post');
 
 /**
  * index method
