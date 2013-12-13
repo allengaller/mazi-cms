@@ -22,7 +22,7 @@ class MainController extends AppController {
 
     public function register() {
         if ($this->request->is('post')) {
-            debug($this->request->data);exit;
+            print_r($this->request->data);exit;
             $this->User->create();
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('The user has been saved.'));
@@ -30,15 +30,12 @@ class MainController extends AppController {
             } else {
                 $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
             }
+        } else {
+            $user = $this->User->find('list');
         }
-        $user = $this->User->find('list');
+        
         $this->set('user', $user);
     	 
-    }
-
-    public function do_register(){
-        echo $this->request->data;
-        exit;
     }
 
     public function feature() {
