@@ -14,7 +14,6 @@
         <div class="span4">
         </div>
         <div class="span4">
-            <form>
                 <fieldset>
                     <legend>注册码字</legend>
                     <p>
@@ -30,16 +29,13 @@
                         <input type="password" id="password"/>
                     </p>
                     <p>
-                        <button class="btn" type="submit" id="submit">注册</button>
+                        <button class="btn" type="button" id="submit">注册</button>
                     </p>
 
                     <fieldset>
                         <legend>第三方登录</legend>
-
-
                     </fieldset>
                 </fieldset>
-            </form>
         </div>
         <div class="span4">
         </div>
@@ -52,12 +48,11 @@
         $("#submit").click(function(){
             $.ajax({
                 type: 'POST',
-                url: 'http://mazi.ag/Main/do_register',
-                data: $("#email").val()+$("#password").val(),
+                url: "<?php echo $this->Html->url(array('conttoller'=>'Main', 'action'=>'register'))?>",
+                data: "email="+$("#email").val()+"&"+"password="+$("#password").val(),
                 success: function(data){
                     alert(data);
-                },
-                dataType: 'html'
+                }
             });
         }
         );
