@@ -14,7 +14,7 @@ __Goal__
 __Check Point__: Dec. 15.   
 __Check List__:
 
-* Back-end Post CRUD.
+* Back-end Post CRUD. [DOING]
 
 
 ### Milestone 1.2 ###
