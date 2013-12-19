@@ -56,8 +56,7 @@
         <h1>码农专用CMS</h1>
         <p class="lead">只面向Geek, Programmer, Hacker, 不面向对象</p>
         <p>
-            <a id="reg_button", class="btn btn-lg btn-success" role="button">立即注册, 永久免费!</a>
-            <!--href="<?php //echo $this->html->url(array('controller'=>'Main', 'action'=>'register'))?>" -->
+            <a id="reg_button", class="btn btn-lg btn-success" role="button" href="<?php echo $this->html->url(array('controller'=>'Main', 'action'=>'register'))?>">立即注册, 永久免费!</a>
             <p class="text-muted"><a href="<?php echo $this->html->url(array('controller'=>'Main', 'action'=>'login'))?>">登录</a></p>
         </p>
 
@@ -110,64 +109,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 
-    <button id="demo_b" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
   </body>
 </html>
 
 <!--<div id="reg_dialog" style="display:none;" class="container-fluid" style="text-align:center;margin-left:auto;margin-right:auto;">-->
-
-
-
-<script>
-$(function(){
-    $('#demo_b').click(function(){
-      $('#myModal').modal(options);
-    });
-    
-    
-    $("#submit").click(function(){
-        $.ajax({
-            type: 'POST',
-            url: "<?php echo $this->Html->url(array('conttoller'=>'Main', 'action'=>'register'))?>",
-            data: "email="+$("#email").val()+"&"+"password="+$("#password").val(),
-            success: function(data){
-                console.log(data);
-                if(data) {
-                    window.location.href='index';    
-                }
-                
-            }
-        });
-    }
-    );
-
-    $("#reg_button").click(function(){
-      $('#reg_dialog').dialog(
-
-      );
-    }
-    );
-});
-</script>

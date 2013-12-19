@@ -1,8 +1,8 @@
+<!DOCTYPE html>
 <head>
     <!-- Bootstrap core CSS -->
     <link href="/app/webroot/css/bootstrap.css" rel="stylesheet">
     <link href="/app/webroot/css/bootstrap-combined.min.css" rel="stylesheet">
-    <link href="/app/webroot/css/layoutit.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/app/webroot/css/justified-nav.css" rel="stylesheet">
@@ -34,10 +34,6 @@
                     <p>
                         <button class="btn" type="button" id="submit">注册</button>
                     </p>
-
-                    <fieldset>
-                        <legend>第三方登录</legend>
-                    </fieldset>
                 </fieldset>
         </div>
         <div class="span4">
