@@ -22,20 +22,15 @@ class MainController extends AppController {
 
     public function register() {
         if ($this->request->is('post')) {
-            print_r($this->request->data);exit;
             $this->User->create();
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('The user has been saved.'));
-                return $this->redirect(array('action' => 'index'));
+                $this->Session->setFlash(__('用户注册成功！'));
+                echo true;
             } else {
-                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+                $this->Session->setFlash(__('用户注册失败！请重试！'));
+                echo false;
             }
-        } else {
-            $user = $this->User->find('list');
         }
-        
-        $this->set('user', $user);
-    	 
     }
 
     public function feature() {

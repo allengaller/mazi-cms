@@ -1,11 +1,14 @@
 <head>
     <!-- Bootstrap core CSS -->
     <link href="/app/webroot/css/bootstrap.css" rel="stylesheet">
+    <link href="/app/webroot/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="/app/webroot/css/layoutit.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/app/webroot/css/justified-nav.css" rel="stylesheet">
 
     <script src="/app/webroot/js/jquery-2.0.3.min.js"></script>
+    <script src="/app/webroot/js/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -51,7 +54,11 @@
                 url: "<?php echo $this->Html->url(array('conttoller'=>'Main', 'action'=>'register'))?>",
                 data: "email="+$("#email").val()+"&"+"password="+$("#password").val(),
                 success: function(data){
-                    alert(data);
+                    console.log(data);
+                    if(data) {
+                        window.location.href='index';    
+                    }
+                    
                 }
             });
         }
