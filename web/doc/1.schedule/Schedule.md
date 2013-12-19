@@ -27,7 +27,10 @@ __Check List__:
 __Check Point__: Dec. 25.   
 __Check List__:
 
-* Testing
+* 基本完成小书模块模块
+* 基本完成学习笔记模块
+* 基本完成项目日记模块
+
 
 Stage 2
 -------
@@ -43,6 +46,8 @@ __Goal__
 ### Milestone 2.1 ###
 __Check Point__: Jan. 5.   
 __Check List__:
+
+* 知识管理模块
 
 ### Milestone 2.2 ###
 __Check Point__: Jan. 10.   
