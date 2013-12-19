@@ -10,18 +10,18 @@ __Goal__
 
 	Finish Mazi Back-end Basic Logics & UI.
 	
-### Milestone 1.1 ###
+### Small Success 1.1 ###
 __Check Point__: Dec. 15.   
 __Check List__:
 
-* Back-end Post CRUD. [DOING]
-
+* 完成登录注册模块[DOING PENDING]
+* 完成博客基本的CRUD[DOING PENDING]
 
 ### Milestone 1.2 ###
 __Check Point__: Dec. 20.   
 __Check List__:
 
-* Back-end Basic UI. 
+* 完成后台基本UI[PENDING]. 
 
 ### Milestone 1.3 ###
 __Check Point__: Dec. 25.   
