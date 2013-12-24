@@ -32,4 +32,28 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	
+	public $uses = array('User', 'Role', 'Permission');
+
+	public $helpers = array(
+        'Html',
+        'Form',
+        'Session',
+        'Text',
+        'Js',
+        'Time',
+        'Cache'
+    );
+
+    public $components = array(
+        'Session',
+        'RequestHandler'
+    );
+
+    public function beforeFilter() {
+    }
+
+    public function checkAuth($permission = array()) {
+
+    }
 }
