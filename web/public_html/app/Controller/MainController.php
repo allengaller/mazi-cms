@@ -17,7 +17,10 @@ class MainController extends AppController {
 	}
 
     public function login() {
-        //$this->layout="login";
+        $email = $this->request->data('email');
+        $password = $this->request->data('password');
+        debug($email);
+        debug($password);exit;
     }
 
     public function register() {
