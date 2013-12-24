@@ -4,7 +4,7 @@ Product Headline 产品理念
 ------------------------
 
 * Clear Looks. 简单，清爽，好用。   
-* Focus on improvement. 专注于敏捷团队或个人的生产力提升。    
+* Focus on improvements. 专注于敏捷团队或个人的生产力提升。    
 
 Feature List 功能清单
 ---------------------
@@ -12,11 +12,11 @@ Feature List 功能清单
 __专业创作__
 __Zone__ / __Pro__
 
-1. 博客
-2. 小书
-3. 学习笔记
-4. 项目日记
-5. 知识管理
+1. Blog 博客 
+2. Booklet 小书 
+3. Notes 学习笔记 
+4. Project Notes 项目日记
+5. Wiki 知识管理
 
 __专业社交__
 __SNS__
