@@ -7,7 +7,7 @@ App::uses('AppModel', 'Model');
  */
 class User extends AppModel {
 
-	public $useTable = 'user';
+	public $useTable = 'mazi_users';
 
 
 }

@@ -17,10 +17,13 @@ class MainController extends AppController {
 	}
 
     public function login() {
-        $email = $this->request->data('email');
-        $password = $this->request->data('password');
-        debug($email);
-        debug($password);exit;
+        if($this->request->is('post')) {
+            $email = $this->request->data('email');
+            $password = $this->request->data('password');
+            debug($email);
+            debug($password);exit;    
+        }
+        $this->redirect(array('controller'=>'zone', 'action'=>'index'));
     }
 
     public function register() {
