@@ -9,9 +9,9 @@ App::uses('AppController', 'Controller');
  */
 class BlogsController extends AppController {
 
-	public $helpers = array('');
+	//public $helpers = array('');
 	public $components = array('Paginator');
-    public $uses = array('blogs');
+    public $uses = array('blog');
 
 	/**
 	 * index method
@@ -21,7 +21,7 @@ class BlogsController extends AppController {
 	public function index() {
 		$this->Post->recursive = 0;
 		$this->set('blogs', $this->Paginator->paginate());
-		$this->render('zone');
+		$this->render('layout/zone');
 	}
 
 	/**
