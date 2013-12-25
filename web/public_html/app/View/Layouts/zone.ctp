@@ -10,6 +10,9 @@
     <!--[if gt IE 8]><!-->
     <link rel="stylesheet" href="styles.css">
     <!--<![endif]-->
+
+    <?php echo $this->fetch('zone'); ?>
+
     <script src="../../responsive-nav.js"></script>
   </head>
   <body>
@@ -17,9 +20,10 @@
     <div role="navigation" id="foo" class="nav-collapse">
       <ul>
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Blog</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Zone</a></li>
+        <li><a href="#">Sale</a></li>
+        <li><a href="#">Branding</a></li>
       </ul>
     </div>
 
