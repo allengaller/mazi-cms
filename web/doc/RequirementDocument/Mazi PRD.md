@@ -28,8 +28,11 @@ __专业社交Hangout模块__
 1. Follow相互关注   
 2. Message富媒体私信   
 3. VideoChat视频通讯   
-4. 视频协作   
+4. ScreenShare视频协作   
 5. CodeShare代码分享   
-6. Project项目协作（接入apps4coder）
+6. ProjectCollaboration项目协作（接入apps4coder）
 
+专业创作Zone模块
+----------------
+__Blog 博客__
 

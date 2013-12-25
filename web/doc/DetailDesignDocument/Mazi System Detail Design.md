@@ -1,4 +1,1 @@
-appsforcoder.com
-================
-
-Website for appsforcoder studio.
+# Mazi System Detail Design #
