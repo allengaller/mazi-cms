@@ -1,2 +1,2 @@
-# Brownie UAT #
+# Mazi UAT #
 * User Acceptance Testing *

@@ -34,5 +34,6 @@ __专业社交Hangout模块__
 
 专业创作Zone模块
 ----------------
-__Blog 博客__
-
+__Blog核心需求__:
+1. Blog Post CRUD   
+2. Markdown Editor   
