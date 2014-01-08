@@ -1,4 +1,4 @@
-# Brownie CMS SEO Solution #
+# Mazi SEO Solution #
 *系统SEO方案*
 
 SEO
@@ -27,7 +27,7 @@ SEO的意义
 网站设计
 -------
 
-		网页静态化
+		网页静态化Brownie->
 		搜索引擎不利因素
 		网页代码规范
 		用户习惯与网页焦点

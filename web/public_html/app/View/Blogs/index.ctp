@@ -1,5 +1,5 @@
-<div class="posts index">
-	<h2><?php echo __('Posts'); ?></h2>
+<div class="Blogs index">
+	<h2><?php echo __('Blogs'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
@@ -31,39 +31,39 @@
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
-	<?php foreach ($posts as $post): ?>
+	<?php foreach ($blogs as $blog): ?>
 	<tr>
-		<td><?php echo h($post['Post']['id']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['pid']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['uid']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['content']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['ptitle']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['psubtitle']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['cates']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['pcates']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['tags']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['ptags']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['metadescription']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['metakeywords']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['description']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['detail']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['attention']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['hits']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['likes']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['is_show']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['is_top']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['img_src']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['price']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['discount']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['is_discount']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['seller_id']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['sales']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['created']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['modified']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['id']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['pid']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['uid']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['content']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['ptitle']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['psubtitle']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['cates']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['pcates']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['tags']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['ptags']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['metadescription']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['metakeywords']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['description']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['detail']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['attention']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['hits']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['likes']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['is_show']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['is_top']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['img_src']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['price']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['discount']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['is_discount']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['seller_id']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['sales']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['created']); ?>&nbsp;</td>
+		<td><?php echo h($blog['Blog']['modified']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $post['Post']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $post['Post']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $post['Post']['id']), null, __('Are you sure you want to delete # %s?', $post['Post']['id'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $blog['Blog']['id'])); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $blog['Blog']['id'])); ?>
+			<?php echo $this->Form->BlogLink(__('Delete'), array('action' => 'delete', $blog['Blog']['id']), null, __('Are you sure you want to delete # %s?', $blog['Blog']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -85,6 +85,6 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Post'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('New Blog'), array('action' => 'add')); ?></li>
 	</ul>
 </div>

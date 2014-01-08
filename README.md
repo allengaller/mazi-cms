@@ -1,6 +1,4 @@
-Mazi - CMS for Programmers
-===========================
-
+#Mazi - CMS for Programmers 码字:程序员的书写工具 #
 * [中文版说明文件](https://github.com/allengaller/baker/blob/master/%E5%85%B3%E4%BA%8E.md)   
 
 About

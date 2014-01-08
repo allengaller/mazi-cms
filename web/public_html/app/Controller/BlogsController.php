@@ -10,7 +10,7 @@ App::uses('AppController', 'Controller');
 class BlogsController extends AppController {
 
 	public $components = array('Paginator');
-    public $uses = array('blog');
+    public $uses = array('Blog');
     public $layout = "zone";
 
 	/**
@@ -19,7 +19,7 @@ class BlogsController extends AppController {
 	 * @return void
 	 */
 	public function index() {
-		$this->Post->recursive = 0;
+		$this->Blog->recursive = 0;
 		$this->set('blogs', $this->Paginator->paginate());
 	}
 
