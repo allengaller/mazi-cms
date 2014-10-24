@@ -27,8 +27,8 @@ class MainController extends AppController {
 
     public function register() {
         if ($this->request->is('post')) {
-            $this->loadModel('MaziUser')
-
+            $this->loadModel('MaziUser');
+            debug($this->MaziUser->find('all'));exit();
 
             $reqData = $this->request->data;
             $reqData['status'] = 1;
